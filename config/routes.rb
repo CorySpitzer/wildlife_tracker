@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   root to: 'sightings#index'
-  resources :species
+  resources :species do
+    resources :sightings
+  end
+
+
+  resources :regions do
+    resources :sightings
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
